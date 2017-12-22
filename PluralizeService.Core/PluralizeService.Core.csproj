@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Konstantin Anisimoff, Microsoft</Authors>
+    <Company>ItMasters.Pro</Company>
+    <Product>Pluralize Service wrap for .Net Core</Product>
+    <Description>Is .Net Core wrapper for class PluralizationService from System.Data.Entity.Design.PluralizationServices</Description>
+    <RepositoryUrl>https://github.com/itmasterspro/PluralizeService.Core.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>pluralize utility</PackageTags>
   </PropertyGroup>
 
 </Project>
