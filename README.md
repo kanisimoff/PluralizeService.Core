@@ -41,6 +41,7 @@ Happy nice code!
 
 ## Authors
 
-* **Konstantin Anisimoff** - *Initial work* - [ItMasters.Pro](https://github.com/itmasterspro)
+* **Microsoft** - *Initial work* - [Microsoft](https://msdn.microsoft.com/en-us/library/system.data.entity.design.pluralizationservices.pluralizationservice.aspx)
+* **Konstantin Anisimoff** - *adapted for .Net Core* - [ItMasters.Pro](https://github.com/itmasterspro)
 
 
