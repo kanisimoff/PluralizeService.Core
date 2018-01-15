@@ -8,7 +8,8 @@
     <Description>Is .Net Core wrapper for class PluralizationService from System.Data.Entity.Design.PluralizationServices</Description>
     <RepositoryUrl>https://github.com/itmasterspro/PluralizeService.Core.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>pluralize utility</PackageTags>
+    <PackageTags>pluralize utility pluralizeservice plural singularize pluralize singular pascalize titleize dasherize camelize capitalize humanize ordinalize netstandard itmasterspro</PackageTags>
+    <PackageProjectUrl>https://github.com/itmasterspro/PluralizeService.Core.git</PackageProjectUrl>
   </PropertyGroup>
 
 </Project>
