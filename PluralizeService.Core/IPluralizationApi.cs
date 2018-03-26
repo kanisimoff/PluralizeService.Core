@@ -31,7 +31,7 @@ namespace PluralizationService
         bool IsPlural(
             string word,
             CultureInfo culture
-        );
+        ); 
 
         /// <summary>
         /// This method determines if the specified word is singular in the 
