@@ -43,5 +43,3 @@ Happy nice code!
 
 * **Microsoft** - *Initial work* - [Microsoft](https://msdn.microsoft.com/en-us/library/system.data.entity.design.pluralizationservices.pluralizationservice.aspx)
 * **Konstantin Anisimoff** - *adapted for .Net Core* - [ItMasters.Pro](https://github.com/itmasterspro)
-
-[![Alt text for your video](https://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](http://www.youtube.com/watch?v=T-D1KVIuvjA)
