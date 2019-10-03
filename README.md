@@ -4,42 +4,26 @@ Is .Net Core wrapper for class PluralizationService from System.Data.Entity.Desi
 
 ## Getting Started
 
-1. Install package Install-Package PluralizeService.Core
-2. Create class PluralizationServiceInstance
+1. Download and build code, include a reference in your code to the project
+2. From anywhere within your code cal the PluralizationProvider as shown below
 ```csharp
-    public class PluralizationServiceInstance : IPluralizer
-    {
-        private static readonly IPluralizationApi Api;
-        private static readonly CultureInfo CultureInfo;
+    string word = "buses";
 
-        static PluralizationServiceInstance()
-        {
-            var builder = new PluralizationApiBuilder();
-            builder.AddEnglishProvider();
-
-            Api = builder.Build();
-            CultureInfo = new CultureInfo("en-US");
-        }
-
-
-        public string Pluralize(string name)
-        {
-            return Api.Pluralize(name, CultureInfo) ?? name;
-        }
-
-        public string Singularize(string name)
-        {
-            return Api.Singularize(name, CultureInfo) ?? name;
-        }
-    }
+    string singleWorld = PluralizationProvider.Singularize(word);
+    Console.WriteLine(singleWorld);
+    // outputs: bus
 ```
-3. Inject class to service collection
+
 ```csharp
-   services.AddSingleton<IPluralizer, PluralizationServiceInstance>();
+    string word = "Company";
+
+    string pluralWord = PluralizationProvider.Pluralize(word);
+    Console.WriteLine(pluralWord);
+    // outputs: Companies
 ```
-Happy nice code!
 
 ## Authors
 
 * **Microsoft** - *Initial work* - [Microsoft](https://msdn.microsoft.com/en-us/library/system.data.entity.design.pluralizationservices.pluralizationservice.aspx)
 * **Konstantin Anisimoff** - *adapted for .Net Core* - [ItMasters.Pro](https://github.com/itmasterspro)
+* **Will Blackburn** - Extended to provide a Singleton Provider Class and XUnit Tests - [Harkole](https://github.com/Harkole/)
