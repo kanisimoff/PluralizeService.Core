@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralizeService.Core", "PluralizeService.Core\PluralizeService.Core.csproj", "{7FF91A40-2C9E-437E-AD79-E6456E205E33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PluralizeService.Core", "PluralizeService.Core\PluralizeService.Core.csproj", "{7FF91A40-2C9E-437E-AD79-E6456E205E33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralizeService.Core.Tests", "PluralizeService.Core.Tests\PluralizeService.Core.Tests.csproj", "{37EF017B-B70E-4841-9156-BC401FA4B9C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7FF91A40-2C9E-437E-AD79-E6456E205E33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FF91A40-2C9E-437E-AD79-E6456E205E33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FF91A40-2C9E-437E-AD79-E6456E205E33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37EF017B-B70E-4841-9156-BC401FA4B9C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EF017B-B70E-4841-9156-BC401FA4B9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EF017B-B70E-4841-9156-BC401FA4B9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EF017B-B70E-4841-9156-BC401FA4B9C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
