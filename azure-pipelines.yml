@@ -32,13 +32,14 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
     packagesToPack: '**/*.csproj'
-    versioningScheme: 'byEnvVar'
-    versionEnvVar: '1.0.2.$(rev:r)'
+    versioningScheme: 'byBuildNumber'
     includeSymbols: true
+
 - task: NuGetCommand@2
   inputs:
     command: 'push'
