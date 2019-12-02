@@ -34,6 +34,13 @@ steps:
     configuration: '$(buildConfiguration)'
 - task: NuGetCommand@2
   inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: '1.0.2.$(rev:r)'
+    includeSymbols: true
+- task: NuGetCommand@2
+  inputs:
     command: 'push'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'external'
