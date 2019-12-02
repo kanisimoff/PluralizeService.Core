@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Konstantin Anisimoff, Microsoft</Authors>
     <Company>ItMasters.Pro</Company>
     <Product>Pluralize Service wrap for .Net Core</Product>
