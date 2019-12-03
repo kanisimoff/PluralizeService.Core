@@ -34,16 +34,9 @@ steps:
     projects: '**/*[Tt]ests/**/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
-- task: DotNetCoreCLI@2
+- task: NuGetCommand@2
   inputs:
     command: 'pack'
-    arguments: '--configuration $(buildConfiguration)'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: '**/PluralizeService.Core.csproj'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
     versioningScheme: 'off'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'publish'
-    publishWebProjects: false
-    projects: '**/PluralizeService.Core.csproj'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
