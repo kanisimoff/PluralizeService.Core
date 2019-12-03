@@ -39,9 +39,12 @@ steps:
     packagesToPack: '**/*.csproj'
     versioningScheme: 'off'
 
-- task: NuGetAuthenticate@0
+- task: NuGetCommand@2
   inputs:
-    nuGetServiceConnections: 'Pluralize Service nuget repository'
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Pluralize Service nuget repository'
 
 - task: NuGetCommand@2
   inputs:
@@ -49,3 +52,4 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'Pluralize Service nuget repository'
+    arguments: '-ApiKey $(Nuget Key)'
