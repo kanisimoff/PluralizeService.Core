@@ -40,6 +40,9 @@ steps:
     packagesToPack: '**/*.csproj'
     versioningScheme: 'off'
 
-- task: PublishBuildArtifacts@1
+- task: DotNetCoreCLI@2
   inputs:
-   PathtoPublish: '$(build.artifactstagingderectory)'
+    command: 'publish'
+    publishWebProjects: false
+    projects: '**/PluralizeService.Core.csproj'
+    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
