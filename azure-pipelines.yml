@@ -28,23 +28,23 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
 - task: DotNetCoreCLI@2
   inputs:
-    command: 'pack'
-    packagesToPack: '**/*.csproj'
-    versioningScheme: 'off'
-
-- task: NuGetAuthenticate@0
-  inputs:
-    nuGetServiceConnections: 'Pluralize Service nuget repository'
+    command: 'test'
+    projects: '**/*[Tt]ests/**/*.csproj'
+    arguments: '--configuration $(BuildConfiguration)'
 
 - task: NuGetCommand@2
   inputs:
+    command: 'pack'
+    packagesToPack: '**/PluralizeService.Core.csproj'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
+    versioningScheme: 'off'
+
+- task: DotNetCoreCLI@2
+  inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'Pluralize Service nuget repository'
+    arguments: '-s https://api.nuget.org/v3/index.json --api-key $(Nuget Key)'
