@@ -10,9 +10,10 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>pluralize utility pluralizeservice plural singularize pluralize singular pascalize titleize dasherize camelize capitalize humanize ordinalize netstandard itmasterspro</PackageTags>
     <PackageProjectUrl>https://github.com/itmasterspro/PluralizeService.Core.git</PackageProjectUrl>
-    <Version>1.0.0</Version>
+    <VersionPrefix>1.2.0</VersionPrefix>
     <SignAssembly>true</SignAssembly>
     <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile />
   </PropertyGroup>
 
 </Project>
