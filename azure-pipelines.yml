@@ -39,7 +39,8 @@ steps:
     command: 'pack'
     packagesToPack: '**/PluralizeService.Core.csproj'
     packDestination: '$(Build.ArtifactStagingDirectory)'
-    versioningScheme: 'off'
+    versioningScheme: 'byBuildNumber'
+    includeSymbols: true
 
 #- task: DotNetCoreCLI@2
 #  inputs:
