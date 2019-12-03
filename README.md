@@ -1,7 +1,9 @@
 # PluralizeService.Core
 
 Is .Net Core wrapper for class PluralizationService from System.Data.Entity.Design.PluralizationServices
-[![Build status](https://dev.azure.com/kanisimoff/Pluralize%20Service%20Library/_apis/build/status/Pluralize%20Service%20Library-ASP.NET%20Core-CI)](https://dev.azure.com/kanisimoff/Pluralize%20Service%20Library/_build/latest?definitionId=3)
+
+Build status:
+[![Build Status](https://kanisimoff.visualstudio.com/Pluralize%20Service%20Library/_apis/build/status/kanisimoff.PluralizeService.Core?branchName=master)](https://kanisimoff.visualstudio.com/Pluralize%20Service%20Library/_build/latest?definitionId=10&branchName=master)
 
 ## Getting Started
 
