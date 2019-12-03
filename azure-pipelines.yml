@@ -47,4 +47,4 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'Pluralize Service nuget repository'
-    arguments: '-s https://api.nuget.org/v3/index.json -k $(Nuget Key)'
+    arguments: '-s https://api.nuget.org/v3/index.json --api-key $(Nuget Key)'
