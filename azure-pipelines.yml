@@ -3,7 +3,7 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-name: $(majorMinorVersion).$(rev:r) # NOTE: rev resets when the default retention period expires
+name: .$(date:yy)$(DayOfYear)$(rev:.r) # NOTE: rev resets when the default retention period expires
 
 
 trigger:
@@ -16,7 +16,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  majorMinorVersion: 2.1
+  majorMinorVersion: 1.2
   # semanticVersion counter is automatically incremented by one in each execution of pipeline
   # second parameter is seed value to reset to every time the referenced majorMinorVersion is changed
   semanticVersion: $[counter(variables['majorMinorVersion'], 0)]
