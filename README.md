@@ -28,5 +28,5 @@ Build status:
 ## Authors
 
 * **Microsoft** - *Initial work* - [Microsoft](https://msdn.microsoft.com/en-us/library/system.data.entity.design.pluralizationservices.pluralizationservice.aspx)
-* **Konstantin Anisimoff** - *adapted for .Net Core* - [ItMasters.Pro](https://github.com/kanisimoff)
+* **Konstantin Anisimoff** - *adapted for .Net Core* - [kanisimoff](https://github.com/kanisimoff)
 * **Will Blackburn** - Extended to provide a Singleton Provider Class and XUnit Tests - [Harkole](https://github.com/Harkole/)
