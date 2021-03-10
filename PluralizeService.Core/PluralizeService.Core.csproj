@@ -11,5 +11,7 @@
     <PackageTags>pluralize utility pluralizeservice plural singularize pluralize singular pascalize titleize dasherize camelize capitalize humanize ordinalize netstandard itmasterspro</PackageTags>
     <PackageProjectUrl>https://github.com/itmasterspro/PluralizeService.Core.git</PackageProjectUrl>
     <VersionPrefix>1.2.0</VersionPrefix>
+    <UserSecretsId>4d695bcb-d8c3-4120-97dc-297d64c951a6</UserSecretsId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 </Project>
