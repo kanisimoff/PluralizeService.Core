@@ -40,6 +40,7 @@ steps:
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
   inputs:
     command: 'test'
     projects: '**/*[Tt]ests/**/*.csproj'
@@ -59,7 +60,6 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'Pluralize Service nuget repository'
-#    arguments: '-s https://api.nuget.org/v3/index.json --api-key $(Nuget Key)'
 
 #- task: NuGetCommand@2
 #  inputs:
