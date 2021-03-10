@@ -42,5 +42,21 @@ namespace PluralizeService.Core
         public static string Singularize(string word) =>
             pluralization.Singularize(word, culture) ?? word;
 
+        /// <summary>
+        /// Determines if the specified word is plural in the language associated with the current culture.
+        /// </summary>
+        /// <param name="word">The word to test.</param>
+        /// <returns>True if plural, otherwise false.</returns>
+        public static bool IsPlural(string word) =>
+            pluralization.IsPlural(word, culture);
+
+        /// <summary>
+        /// Determines if the specified word is singular in the language associated with the current culture.
+        /// </summary>
+        /// <param name="word">The word to test.</param>
+        /// <returns>True if singular, otherwise false.</returns>
+        public static bool IsSingular(string word) =>
+            pluralization.IsSingular(word, culture);
+
     }
 }
