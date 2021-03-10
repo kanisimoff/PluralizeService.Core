@@ -59,7 +59,7 @@ steps:
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'Pluralize Service nuget repository'
-    arguments: '-s https://api.nuget.org/v3/index.json --api-key $(Nuget Key)'
+#    arguments: '-s https://api.nuget.org/v3/index.json --api-key $(Nuget Key)'
 
 #- task: NuGetCommand@2
 #  inputs:
