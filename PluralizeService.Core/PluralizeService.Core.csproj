@@ -14,10 +14,15 @@
     <UserSecretsId>4d695bcb-d8c3-4120-97dc-297d64c951a6</UserSecretsId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>Logo_IT_Masters.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="Properties\Logo_IT_Masters.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
