@@ -24,39 +24,35 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 
+    checkLatest: true
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
 
-- task: VSBuild@1
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
   inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    command: 'build'
+    arguments: '--configuration $(buildConfiguration)'
+    projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
   inputs:
     command: 'test'
     projects: '**/*[Tt]ests/**/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
     packagesToPack: '**/PluralizeService.Core.csproj'
-    packDestination: '$(Build.ArtifactStagingDirectory)'
+    nobuild: true
+    includesymbols: true
     versioningScheme: 'byBuildNumber'
-    includeSymbols: true
-
-#- task: DotNetCoreCLI@2
-#  inputs:
-#    command: 'push'
-#    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-#    nuGetFeedType: 'external'
-#    publishFeedCredentials: 'Pluralize Service nuget repository'
-#    arguments: '-s https://api.nuget.org/v3/index.json --api-key $(Nuget Key)'
 
 - task: NuGetCommand@2
   inputs:
