@@ -6,8 +6,8 @@
 name: $(MajorVersion).$(MinorVersion).$(date:yy)$(DayOfYear)$(rev:.r) # NOTE: rev resets when the default retention period expires
 
 
-#trigger:
-#- master
+trigger:
+- master
 
 pool:
   vmImage: 'windows-latest'
@@ -53,14 +53,6 @@ steps:
     nobuild: true
     includesymbols: true
     versioningScheme: 'byBuildNumber'
-
-#- task: NuGetCommand@2
-#  inputs:
-#    command: 'pack'
-#    packagesToPack: '**/PluralizeService.Core.csproj'
-#    packDestination: '$(Build.ArtifactStagingDirectory)'
-#    versioningScheme: 'byBuildNumber'
-#    includeSymbols: true
 
 - task: NuGetCommand@2
   inputs:
