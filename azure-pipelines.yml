@@ -46,28 +46,25 @@ steps:
     projects: '**/*[Tt]ests/**/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
-- task: NuGetCommand@2
+- task: DotNetCoreCLI@2
   inputs:
     command: 'pack'
     packagesToPack: '**/PluralizeService.Core.csproj'
-    packDestination: '$(Build.ArtifactStagingDirectory)'
+    nobuild: true
+    includesymbols: true
     versioningScheme: 'byBuildNumber'
-    includeSymbols: true
-
-- task: NuGetAuthenticate@0
-  inputs:
-    nuGetServiceConnections: 'Pluralize Service nuget repository'
-
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    nuGetFeedType: 'external'
-    publishFeedCredentials: 'Pluralize Service nuget repository'
 
 #- task: NuGetCommand@2
 #  inputs:
-#    command: 'push'
-#    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
-#    nuGetFeedType: 'external'
-#    publishFeedCredentials: 'Pluralize Service nuget repository'
+#    command: 'pack'
+#    packagesToPack: '**/PluralizeService.Core.csproj'
+#    packDestination: '$(Build.ArtifactStagingDirectory)'
+#    versioningScheme: 'byBuildNumber'
+#    includeSymbols: true
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Pluralize Service nuget repository'
