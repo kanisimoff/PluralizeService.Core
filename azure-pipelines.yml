@@ -54,10 +54,14 @@ steps:
     versioningScheme: 'byBuildNumber'
     includeSymbols: true
 
+- task: NuGetAuthenticate@0
+  inputs:
+    nuGetServiceConnections: 'Pluralize Service nuget repository'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'push'
-    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     nuGetFeedType: 'external'
     publishFeedCredentials: 'Pluralize Service nuget repository'
 
