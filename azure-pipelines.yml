@@ -6,8 +6,8 @@
 name: $(MajorVersion).$(MinorVersion).$(date:yy)$(DayOfYear)$(rev:.r) # NOTE: rev resets when the default retention period expires
 
 
-trigger:
-- master
+#trigger:
+#- master
 
 pool:
   vmImage: 'windows-latest'
