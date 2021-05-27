@@ -245,7 +245,8 @@ namespace PluralizationService.English.Adapters
             { "rhino", "rhinos" },
             { "fiasco", "fiascos" },
             { "magneto", "magnetos" },
-            { "stylo", "stylos" }
+            { "stylo", "stylos" },
+            { "euro", "euros" },
         };
 
         private Dictionary<string, string> _classicalInflectionDictionary = new Dictionary<string, string>()

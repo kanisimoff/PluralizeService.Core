@@ -10,6 +10,8 @@ namespace PluralizeService.Core.Tests
         [InlineData("Project", "Projects")]
         [InlineData("Container", "Containers")]
         [InlineData("bus", "buses")]
+        [InlineData("euro", "euros")]
+        [InlineData("Euro", "Euros")]
         public void ShouldPluralizeWord(string word, string expected)
         {
             // Arrange
