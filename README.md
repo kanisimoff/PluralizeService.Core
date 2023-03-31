@@ -8,7 +8,7 @@ Build status:
 ## Getting Started
 
 1. Download and build code, include a reference in your code to the project
-2. From anywhere within your code cal the PluralizationProvider as shown below
+2. From anywhere within your code call the PluralizationProvider as shown below 
 ```csharp
     string word = "buses";
 
